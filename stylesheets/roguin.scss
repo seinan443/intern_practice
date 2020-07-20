@@ -1,0 +1,73 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+    background: url(roguin1.jpg) center center / cover no-repeat fixed;
+    background-size: cover;
+    background-color:rgba(255,255,255,0.5);
+    background-blend-mode:lighten;
+  }
+  header {
+    background-color: black;
+    height: 80px;
+    font-weight: bold;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  header a {
+    color: white; 
+    text-decoration: none; 
+  }
+
+  .header-list {
+    display: flex;
+    align-items: center;
+  }
+  header ul {
+    display: flex;
+  }
+  header li {
+    list-style: none;
+    margin-right: 40px;
+  }
+
+ 
+  .title-container h1 {
+    text-align: center;
+    color: red;
+    font-size: 100px;
+    margin-top: 100px;
+  }
+  .title-container h3 {
+    text-align: center;
+    color: red;
+    font-size: 30px;
+  }
+  .kinou-container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    align-items: center;
+    color: black;
+  }
+
+  .info-text {
+    font-size: 20px;
+    margin-top: 70px;
+    width: 30%;
+    margin-left: 40px;
+  }
+
+  b {
+      font-size: 30px;
+  }
+  
+  span {
+    display:block;
+    margin-top: 50px;
+    color:#190707
+    
+  }

@@ -1,0 +1,81 @@
+* {
+    padding: 0;
+    margin: 0;
+  }
+  header {
+    background-color: black;
+    height: 80px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  header h1{
+      color:red
+  }
+  header a {
+    color: white; 
+    text-decoration: none; 
+  }
+
+  .header-list {
+    display: flex;
+    align-items: center;
+  }
+  header ul {
+    display: flex;
+  }
+  header li {
+    list-style: none;
+    margin-right: 40px;
+  }
+
+  h2 {
+    text-align: center;
+    color: black;
+    font-size: 40px;
+    margin-top: 50px;
+  }
+
+  .field{
+    margin-top: 30px;
+    margin-left: 300px;
+}
+
+input[type="email"] {
+  width: 70%;
+  height: 30px;
+  margin-top: 5px;
+}
+
+input[type="password"] {
+  width: 70%;
+  height: 30px;
+  margin-top: 5px;
+}
+
+  input[type="text"] {
+    width: 70%;
+    height: 30px;
+    margin-top: 5px;
+  }
+
+  input[type="submit"] {
+    display       : inline-block;
+    border-radius : 5%;          
+    font-size     : 10pt;       
+    text-align    : center;      
+    cursor        : pointer;     /* カーソル   */
+    padding       : 12px 12px;   /* 余白       */
+    background    : #4da6ff;     /* 背景色     */
+    color         : #ffffff;     
+    line-height   : 1em;         
+    transition    : .3s;         
+    border        : 2px solid #4da6ff;   
+    margin-top: 50px; 
+  }
+
+  .actions {
+    margin-left: 300px;
+  }

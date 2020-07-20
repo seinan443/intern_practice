@@ -1,0 +1,57 @@
+<body>
+    <header>
+      <h1>Share Netflix</h1>
+      <div class="header-list">
+      <ul>
+        <li><%= link_to "トップ", roguin_index_path %></li>
+        <li><%= link_to "ログイン", movie_index_path %></li>
+        <li><%= link_to "新規登録", new_user_registration_path %></li>
+      </ul>
+      </div>
+    </header>
+    <main>
+      <%= yield %>
+    </main>
+  </body>
+
+  <section id="first-block">
+  <h2>ログインする</h2>
+  <p>※登録したメールアドレスとパスワードを入力してください。</p>
+  </section>
+
+<section id="second-block">
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="field">
+    <%= f.label :メールアドレス %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :パスワード %><br />
+    <%= f.password_field :password, autocomplete: "current-password" %>
+    <div class="column-right">
+    <%= link_to "パスワードを忘れた場合", new_user_password_path %>
+  </div>
+  </div>
+
+  <% if devise_mapping.rememberable? %>
+    <div class="field">
+      <%= f.check_box :remember_me %>
+      <%= f.label :ユーザーを記憶する %>
+    </div>
+  <% end %>
+</section>
+
+<section id="third-block">
+  <div class="actions">
+    <%= f.submit "ログイン" %>
+  </div>
+<% end %>
+  <div class="newuser">
+  <%= link_to "ユーザー登録がまだの場合はこちらから", new_user_registration_path %>
+  </div>
+</section>
+
+
+<%= stylesheet_link_tag 'sign_in', :media => "all" %>
+

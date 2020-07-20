@@ -1,0 +1,68 @@
+<body>
+    <header>
+      <h1>Share Netflix</h1>
+      <div class="header-list">
+      <ul>
+        <li><%= link_to "ホーム", movie_index_path %></li>
+        <li><%= link_to '投稿する', :controller => "movie", :action => "new" %></li>
+        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+        <li><a href="/users/<%= current_user.id %>">マイページ</a></li>
+      </ul>
+      </div>
+    </header>
+  </body>
+
+<section id="first-block">
+<h2>作品詳細ページ</h2>
+<h3>~見たいと思った作品にはいいねを押そう！~</h3>
+</section>
+
+<section id="second-block">
+ <div class="main-box">
+  <div class="left-box">
+  <%= image_tag @movie.image_url %>
+  </div>
+  <div class="right-box">
+   <div class="title-box">
+  <h5>作品名:<%= @movie.name %></h5>
+   </div>
+  <ul>
+  <li>主演:<%= @movie.character %></li>
+  <li>ジャンル:<%= @movie.genre %></li>
+  <li>上映時間:<%= @movie.time %>分</li>
+  <h4> ♡<%= @movie.liked_users.count %></h4>
+  <li><% if current_user.already_liked?(@movie) %>
+    <%= button_to 'いいねを取り消す', movie_like_path(@movie), method: :delete %>
+  <% else %>
+    <%= button_to 'いいね', movie_likes_path(@movie) %>
+  <% end %>
+  </li>
+　 </div>
+  </div>
+  <div class="review-box">
+   <h6><投稿者からのレビュー></h6>
+   <p><%= @movie.review %></p>
+   </section>
+
+<section id="third-block">
+<div class="comment-wrapper">
+  <h6><コメント一覧></h6>
+  <% if user_signed_in? %>
+  <%= form_with(model: [@movie, @comment], local: true) do |f| %>
+      <%= f.text_area :comment%>
+      <%= button_tag type: "submit" do %>
+        <i class="far fa-comments"></i> コメントする
+      <% end %>
+    <% end %>
+  <% end %>
+  <% @comments.each do |c| %>
+      <%= c.comment %>
+      <br>
+  <% end %>
+</div>
+<div class="sub-box">
+<%= link_to "作品一覧に戻る", movie_index_path %>
+<%= link_to "編集する", edit_movie_path(@movie.id) %>
+</div>
+
+<%= stylesheet_link_tag 'movie_show', :media => "all" %>

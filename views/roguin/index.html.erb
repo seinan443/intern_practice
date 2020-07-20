@@ -1,0 +1,60 @@
+<body>
+    <header>
+      <div class="header-list">
+      <ul>
+        <li><%= link_to "トップ", roguin_index_path %></li>
+        <li><%= link_to "ログイン", movie_index_path %></li>
+        <li><%= link_to "新規登録", new_user_registration_path %></li>
+      </ul>
+      </div>
+    </header>
+
+    <section id="first-block">
+      <div class="title-container">
+      <h1>Sharing NETFLIX</h1>
+      <h3>~ お気に入りのNetflix作品をシェアしよう ~</h3>
+    </div>
+    </section>
+
+    <section id="second-block">
+      <div class="kinou-container">
+      <p class="info-text">
+        <b>投稿できる！</b>
+        <br>
+        <span class="font-small">
+        あなたの好きな作品を投稿して
+        <br>
+        多くの人に共有しましょう！
+        </span>
+      </p>
+
+      <p class="info-text">
+        <b>いいねができる！</b>
+        <br>
+        <span class="font-small">
+        お気に入りの投稿を見つけたら
+        <br>
+        投稿にいいねをつけて
+        <br>
+        自分だけのマイリストを作りましょう！
+        </span>
+      </p>
+
+      <p class="info-text">
+        <b>フォローでつながる！</b>
+        <br>
+        <span class="font-small">
+        お気に入りの投稿をみつけたら
+        <br>
+        投稿した人をぜひフォローして
+        <br>
+        たくさんの人とつながりましょう！
+        </span>
+      </p>    
+    </div>
+    </section>
+  </body>
+
+  <%= stylesheet_link_tag 'roguin', :media => "all" %>
+
+
